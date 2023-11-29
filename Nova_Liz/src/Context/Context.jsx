@@ -22,9 +22,6 @@ const Context =({children}) => {
     
     }, [])
 
-
-    const valor = true;
-
     return (
         <CharContext.Provider value={{state, dispatch}}>
             {children}
