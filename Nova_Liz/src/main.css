@@ -12,11 +12,32 @@ code {
     monospace;
 }
 .favButton{
-  background-color: rgba(136, 136, 136, 0.116);
+  background-color: rgb(152, 230, 230);
   padding: 10px;
   border: none;
-  width: 100%;
+  width: 50%;
   cursor: pointer;
+}
+
+.themeButton{
+  display: flex;
+  background-color: rgb(61, 103, 218);
+  border: none;
+  height: 30px;
+  width: 150px;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+
+}
+
+.detalles{
+  text-align: center;
+}
+
+.contact{
+  text-align: center;
 }
 
 h1{
@@ -27,7 +48,7 @@ nav{
   display: flex;
   width: 80vw;
   justify-content: space-between;
-  padding: 0px 0px 100px 100px;
+  padding: 0px 0px 50px 100px;
 }
 
 a{
@@ -37,7 +58,7 @@ a{
   cursor: pointer;
 }
 a:hover{
-  color: rgb(136, 136, 136);
+  color: royalblue;
 } 
 
 footer {
@@ -71,7 +92,8 @@ form{
 }
 
 button{
-  background-color: papayawhip;
+
+  border-radius: 20px;
 }
 
 .card{
@@ -85,7 +107,7 @@ button{
 }
 
 .card:hover{
-  border: 0.5px solid rgb(206, 217, 142);
+  border: 0.5px solid rgb(147, 142, 217);
 }
 
 .card-grid{

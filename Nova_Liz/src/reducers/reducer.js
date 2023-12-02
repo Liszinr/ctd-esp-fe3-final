@@ -9,7 +9,7 @@ export const reducer = (state, action) => {
         case 'DELETE_FAV':
             return {} 
         case 'CHANGE_THEME':
-            return {...state, theme: ''} //incompleto
+            return {...state, theme: state.theme === 'dark' ? 'light' : 'dark' };
         default:
             return state
     }

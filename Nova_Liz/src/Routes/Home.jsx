@@ -7,11 +7,9 @@ import {useCharContext} from '../Context/Context'
 const Home = () => {
   const {state} = useCharContext()
   return (
-    <main className="" >
+    <main className={state.theme ? 'th' : 'dark'}>
       <div className='card-grid'>
         {/* Aqui deberias renderizar las cards */}
-        {/* {odontoList.list.map(characters => <Card characters={characters}/>)}
-        <Card {...characters}/> */}
         {state.list.map(character => <Card icon={'⭐'} character={character} key={character.id}/>)}
       </div>
     </main>

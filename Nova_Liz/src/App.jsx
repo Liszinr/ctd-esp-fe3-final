@@ -6,7 +6,7 @@ import Home from './Routes/Home';
 import Detail from './Routes/Detail';
 import Contact from './Routes/Contact';
 import Favs from './Routes/Favs';
-
+import { Navigate } from 'react-router-dom';
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
         </div>
         <Routes>
           <Route path='/' element={<Home/>}/>
-          <Route path='/home' element={<Home/>}/>
+          <Route path='/home' element={<Navigate to="/" />}/>
           <Route path='/detail/:id' element={<Detail/>}/>
           <Route path='/contacto' element={<Contact/>}/>
           <Route path='/favs' element={<Favs/>}/>
