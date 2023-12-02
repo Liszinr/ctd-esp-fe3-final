@@ -3,11 +3,11 @@ export const reducer = (state, action) => {
         case 'GET_CHARACTERS':
             return {...state, list: action.payload}
         case 'GET_CHARACTER': 
-            return {...state, character: {}} //incompleto
+            return {...state, character: {}} 
         case 'ADD_FAV':
-            return {...state, favs: []} //incompleto
+            return {...state, favs: [...state.favs, action.payload]} 
         case 'DELETE_FAV':
-            return {} //incompleto
+            return {} 
         case 'CHANGE_THEME':
             return {...state, theme: ''} //incompleto
         default:

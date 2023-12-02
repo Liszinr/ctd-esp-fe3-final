@@ -6,13 +6,14 @@ const CharContext = createContext()
 
 const initialState = {
     list: [],
-    favs: [],
+    favs: JSON.parse(localStorage.getItem('favs')) || [],
     theme: true
 }
 
 const Context =({children}) => {
 
     const [state, dispatch] = useReducer(reducer, initialState)
+    
     console.log(state)
     const url = 'https://jsonplaceholder.typicode.com/users'
 
@@ -31,4 +32,4 @@ const Context =({children}) => {
 
 export default Context
 
-export const userCharContext = () => useContext(CharContext);
+export const useCharContext = () => useContext(CharContext);

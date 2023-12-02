@@ -1,19 +1,18 @@
 import React from 'react'
 import Card from '../Components/Card'
-import {userCharContext} from '../Context/Context'
+import {useCharContext} from '../Context/Context'
 
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
 const Home = () => {
-  const {state} = userCharContext()
+  const {state} = useCharContext()
   return (
     <main className="" >
-      <h1>Home</h1>
       <div className='card-grid'>
         {/* Aqui deberias renderizar las cards */}
         {/* {odontoList.list.map(characters => <Card characters={characters}/>)}
         <Card {...characters}/> */}
-        {state.list.map((character) => <Card character={character} key={character.id}/>)}
+        {state.list.map(character => <Card icon={'⭐'} character={character} key={character.id}/>)}
       </div>
     </main>
   )

@@ -1,16 +1,24 @@
 import React from "react";
 import { Link } from 'react-router-dom'
-import { useEffect } from 'react'
-import { useState } from 'react'
+import { useCharContext } from '../Context/Context'
 
-
-const Card = ({ character, name, username, id }) => {
+const Card = ({ character }) => {
   
   
-
-  const addFav = ()=>{
     // Aqui iria la logica para agregar la Card en el localStorage
-  }
+    const {state, dispatch} = useCharContext()
+
+    const findFav = state.favs.find(fav => fav.id == character.id)
+
+    const addFav = () => {
+      if(findFav){
+        alert('Ya fue agregado a favoritos')
+      } else {
+        dispatch({type: 'ADD_FAV', payload: character})
+        localStorage.setItem('favs', JSON.stringify(state.favs))
+      }
+    }
+    
 
   return (
     <div className="card">
@@ -20,13 +28,13 @@ const Card = ({ character, name, username, id }) => {
           <h4>{character.name}</h4>
           <h3>{character.username}</h3>
         </Link>
-        {/* {odontoList.map(odonto => <Card key={odonto.id} odonto={odonto}/>)} */}
         {/* No debes olvidar que la Card a su vez servira como Link hacia la pagina de detalle */}
 
         {/* Ademas deberan integrar la logica para guardar cada Card en el localStorage */}
-        <button onClick={addFav} className="favButton">⭐ Add fav </button>
+        <button onClick={addFav} className="favButton">{findFav ? '💙':'🩶'}</button>
     </div>
   );
-};
+  
+  };
 
 export default Card;
